@@ -15,10 +15,10 @@ var connection = mysql.createConnection({
     database: "friend_finder_db"
 });
 
-app.use(express.static("app"));
+app.use(express.static("app/public"));
 
 app.get('/survey', function(req, res) {
-    res.redirect('/public/index.html')
+    res.redirect('/index.html')
 });
 
 app.post('/find', function(req, res) {
@@ -40,12 +40,12 @@ app.post('/find', function(req, res) {
     };
     connection.query('INSERT INTO users SET ?', data);
     // console.log([parseInt(req.body.question1), req.body.question2])
-    res.redirect('/results');
+    res.redirect('/results.html');
 });
 
 app.get('/results', function(req, res) {
     connection.query('SELECT * FROM users', function(err, results, fields) {
-        res.json(results[0].answers.split(','));
+        res.json(results);
     });
 });
 
