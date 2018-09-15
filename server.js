@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
+var JSAlert = require("js-alert");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -39,7 +40,6 @@ app.post('/find', function(req, res) {
         answers: answersArray.toString()
     };
     connection.query('INSERT INTO users SET ?', data);
-    // console.log([parseInt(req.body.question1), req.body.question2])
     res.redirect('/results.html');
 });
 
