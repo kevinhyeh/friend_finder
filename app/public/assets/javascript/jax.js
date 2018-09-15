@@ -19,6 +19,6 @@ $.ajax({
             matchedUsers = data[i].name;
         }
     }
-    $('body').append(matchedUsers)
+    $('body').append(matchedUsers);
 });
 
