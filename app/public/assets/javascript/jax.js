@@ -4,6 +4,7 @@ $.ajax({
 }).then(function(data) {
     var recentUser = data[data.length - 1].answers.split(',');
     var matchedUsers;
+    var profile;
     var bestDifference = 100;
 
     // running for every other user 
@@ -17,8 +18,10 @@ $.ajax({
         if (Math.abs(totalDifference) <= bestDifference) {
             bestDifference = Math.abs(totalDifference);
             matchedUsers = data[i].name;
+            profile = data[i].picture;
         }
     }
-    $('body').append(matchedUsers);
+    $('h3').html(matchedUsers);
+    $('#profile').attr('src', profile);
 });
 

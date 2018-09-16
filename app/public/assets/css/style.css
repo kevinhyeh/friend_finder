@@ -36,6 +36,10 @@ p {
     margin-right: 40px;
 }
 
+#profile {
+    width: 200px;
+}
+
 button {
     font-size: 20px;
     border-radius: 10px;

@@ -6,5 +6,6 @@ CREATE TABLE users(
     id INT AUTO_INCREMENT NOT NULL,
     name VARCHAR(45) NOT NULL,
     answers VARCHAR(45) NOT NULL,
+    picture VARCHAR(45) NOT NULL,
     PRIMARY KEY (id)
 );
